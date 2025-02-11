@@ -5,6 +5,6 @@
 back/venv/
 back/modelo_y_tokenizador.pkl
 # Ignorar los node_modules del frontend
-front/sentiment-analysis/node_modules/
+front/sentiment_analysis/node_modules
 
 
