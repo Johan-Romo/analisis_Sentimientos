@@ -1,0 +1,76 @@
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.file-upload-container {
+  margin-bottom: 20px;
+}
+
+.file-input {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.upload-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ffaf7b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.upload-btn:hover {
+  background-color: #d76d77;
+}
+
+.result-container {
+  margin-top: 20px;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.result-table th, .result-table td {
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.sentiment-positivo {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sentiment-negativo {
+  background-color: #F44336;
+  color: white;
+}
+
+.sentiment-neutro {
+  background-color: #FFC107;
+  color: white;
+}
