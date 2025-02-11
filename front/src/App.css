@@ -8,7 +8,7 @@ body {
 }
 
 .app-container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 50px auto;
   padding: 20px;
   background: rgba(0, 0, 0, 0.6);
@@ -17,47 +17,124 @@ body {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 50px; /* Aumentar el tamaño */
+  font-family: "Impact", sans-serif; /* Cambiar la fuente */
+  text-transform: uppercase; /* Convertir a mayúsculas */
+  color: #ffffff; /* Amarillo brillante */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Sombra negra */
   margin-bottom: 20px;
 }
 
-.file-upload-container {
-  margin-bottom: 20px;
-}
-
-.file-input {
-  padding: 10px;
-  border-radius: 5px;
-}
-
+/* 🎨 Nuevo diseño para los botones */
 .upload-btn {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #ffaf7b;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 18px;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 .upload-btn:hover {
-  background-color: #d76d77;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 10px rgba(255, 255, 255, 0.3);
 }
 
+.upload-btn:active {
+  transform: scale(0.98);
+}
+
+/* 🎨 Efecto de brillo en los botones */
+.upload-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0) 40%);
+  transition: all 0.6s ease-in-out;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.upload-btn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 📂 Estilo para el input de archivo */
+.file-input {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.file-input:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.left-panel {
+  width: 55%;
+}
+
+.right-panel {
+  width: 40%;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* 🎨 Contenedor de la tabla con SCROLL */
 .result-container {
   margin-top: 20px;
+  text-align: center;
 }
 
+.table-wrapper {
+  max-height: 400px; /* Altura máxima para activar el scroll */
+  overflow-y: auto; /* Agrega scroll vertical */
+  border-radius: 10px;
+  border: 1px solid white;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* 🎯 Tabla de resultados */
 .result-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
 }
 
-.result-table th, .result-table td {
+.result-table th,
+.result-table td {
   border: 1px solid white;
   padding: 10px;
+  text-align: left;
+}
+
+.result-table th {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .sentiment-positivo {
@@ -73,4 +150,35 @@ h1 {
 .sentiment-neutro {
   background-color: #FFC107;
   color: white;
+}
+
+/* 📊 Contenedor de estadísticas */
+.stats-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.stats-container h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.stats-container p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.stats-container hr {
+  border: 1px solid white;
+  margin: 10px 0;
+}
+
+/* 📊 Estilos para la gráfica de pastel */
+canvas {
+  max-width: 300px !important;
+  max-height: 300px !important;
+  margin: auto;
 }

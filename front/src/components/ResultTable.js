@@ -8,22 +8,24 @@ const ResultTable = ({ data }) => {
       {data.length === 0 ? (
         <p>No hay datos aún. Sube un archivo para ver resultados.</p>
       ) : (
-        <table className="result-table">
-          <thead>
-            <tr>
-              <th>Comentario</th>
-              <th>Sentimiento</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item, index) => (
-              <tr key={index}>
-                <td>{item.Comentario}</td>
-                <td className={`sentiment-${item.Sentimiento.toLowerCase()}`}>{item.Sentimiento}</td>
+        <div className="table-wrapper">
+          <table className="result-table">
+            <thead>
+              <tr>
+                <th>Comentario</th>
+                <th>Sentimiento</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {data.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.Comentario}</td>
+                  <td className={`sentiment-${item.Sentimiento.toLowerCase()}`}>{item.Sentimiento}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );
