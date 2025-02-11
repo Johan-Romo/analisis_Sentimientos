@@ -1,0 +1,10 @@
+# Ignorar el archivo .env
+.env
+
+# Ignorar los node_modules del backend
+back/venv/
+back/modelo_y_tokenizador.pkl
+# Ignorar los node_modules del frontend
+front/sentiment-analysis/node_modules
+
+
