@@ -39,7 +39,7 @@ def clasificar():
     df = pd.read_excel(file)
     
     if "Comentario" not in df.columns:
-        return jsonify({"error": "El archivo debe contener una columna 'Comentario'"}), 400
+        return jsonify({"error": "El archivo debe contener la columna 'Comentario'"}), 400
 
     df["Sentimiento"] = df["Comentario"].apply(predecir_sentimiento)
     result = df.to_dict(orient="records")
