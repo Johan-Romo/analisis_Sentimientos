@@ -45,6 +45,16 @@ def clasificar():
     result = df.to_dict(orient="records")
     return jsonify({"predicciones": result})
 
+@app.route("/clasificar_comentario", methods=["POST"])
+def clasificar_comentario():
+    data = request.get_json()
+    if not data or "comentario" not in data:
+        return jsonify({"error": "Se requiere un campo 'comentario' en el cuerpo de la solicitud"}), 400
+
+    comentario = data["comentario"]
+    sentimiento = predecir_sentimiento(comentario)
+    return jsonify({"comentario": comentario, "sentimiento": sentimiento})
+
 if __name__ == "__main__":
     print("🚀 Iniciando servidor Flask en http://127.0.0.1:5000")
     app.run(debug=True)
